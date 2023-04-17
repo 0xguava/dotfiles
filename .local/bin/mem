@@ -1,0 +1,3 @@
+#!/bin/bash
+icon='💾'
+echo $icon:$(free -h | head -n2 | tail -n1 | awk '{ print$3 }')/$(free -h | head -n2 | tail -n1 | awk '{ print$2 }') | sed 's/i//g' 
