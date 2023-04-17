@@ -1,0 +1,13 @@
+#!/bin/sh
+
+while read file
+do
+	case "$1" in
+		"C-d")
+			mv "$file" ~/pix/.trash ;;
+		"C-c")
+			echo "$file" | xclip -sel c ;;
+		"C-r")
+			convert -rotate 90 "$file" "$file" ;;
+	esac
+done
