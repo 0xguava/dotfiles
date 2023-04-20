@@ -15,6 +15,7 @@ if [[ $perm == "y" ]]
 then
 	wal -s -i ~/pix/wallp/$wpic
 	wal-telegram -w -g
+	pywalfox update > /dev/null
 
 	sed '/urg/d' -i ~/.cache/wal/colors-wal-dwm.h
 	sed '31s/0/256/' -i ~/.cache/wal/colors-wal-st.h
