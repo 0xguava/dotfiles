@@ -1,5 +1,5 @@
 
-#autoload -U colors && colors
+
 source ~/.cache/wal/colors.sh
 
 PS1="[%F{$color4}%n%f@%F{$color2}%m%f %F{$color5}%~%f] %(!.#.$) "
