@@ -1,10 +1,9 @@
 
-
 source ~/.cache/wal/colors.sh
 
 PS1="[%F{$color4}%n%f@%F{$color2}%m%f %F{$color5}%~%f] %(!.#.$) "
 
-
+#History confs.
 HISTFILE=~/.cache/zsh/histfile
 HISTSIZE=1000
 SAVEHIST=1000
