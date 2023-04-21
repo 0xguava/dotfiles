@@ -16,7 +16,6 @@ zstyle ':completion:*' menu select
 bindkey -e
 bindkey ";5C" forward-word
 bindkey ";5D" backward-word
-#export KEYTIMEOUT=1
 bindkey "~" delete-char
 
 function precmd () {
