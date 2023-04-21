@@ -9,14 +9,18 @@ fi
 
 xwallpaper --zoom ~/pix/wallp/$wpic
 
-read -p 'Do you liked it? Wanna continue... (y) - ' perm
+read -p 'Did you liked it? Wanna continue... (y) - ' perm
 
 if [[ $perm == "y" ]]
 then
-	wal -s -i ~/pix/wallp/$wpic
-	wal-telegram -w -g
+	echo 'Generating pywal color scheme!....'
+	wal -s -i ~/pix/wallp/$wpic > /dev/null
+	echo 'Getting Pywal theme for Telegram...'
+	wal-telegram -w -g > /dev/null
+	echo 'Getting Pywal colors for Firefox with pywalfox....'
 	pywalfox update > /dev/null
 
+	echo 'doing some configs....'
 	sed '/urg/d' -i ~/.cache/wal/colors-wal-dwm.h
 	sed '31s/0/256/' -i ~/.cache/wal/colors-wal-st.h
 	sed '24s/"[^"]*"/"#000000"/' -i ~/.cache/wal/colors-wal-st.h
@@ -24,11 +28,15 @@ then
 	sed "s/.*foreground.*/$(grep foreground ~/.cache/wal/colors.Xresources | head -n 1 | sed s/\*/Sxiv\./g)/" -i ~/.Xresources
 	sed "s/.*background.*/$(grep background ~/.cache/wal/colors.Xresources | head -n 1 | sed s/\*/Sxiv\./g)/" -i ~/.Xresources
 
+	echo 'Getting SucklessS ready with pywal....'
 	cd ~/.local/src/dwm && sudo make clean install > /dev/null
 	cd ~/.local/src/st && sudo make clean install > /dev/null
 	cd ~/.local/src/dmenu && sudo make clean install > /dev/null
 
 	xrdb -load ~/.Xresources
+	echo 'Give a hot reload then, 
+		have fun with new Theme'
 else
 	xwallpaper --zoom $(cat ~/.cache/wal/wal)
+	echo 'Keep enjoying with old one..!'
 fi
