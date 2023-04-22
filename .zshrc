@@ -3,7 +3,7 @@ GIT_PS1_SHOWDIRTYSTATE=1
 source ~/.cache/wal/colors.sh
 source ~/.config/zsh/git-prompt.sh
 
-PS1="[%F{$color4}%n%f@%F{$color2}%m%f %F{$color5}%~%f] %(!.#.$) "
+PS1="[%F{$color4}%n%f@%F{$color2}%m%f %F{$color5}%~%f] %(!.#.$) "
 
 #git branch in rps1
 setopt PROMPT_SUBST
