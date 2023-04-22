@@ -34,8 +34,7 @@ then
 	cd ~/.local/src/dmenu && sudo make clean install > /dev/null
 
 	xrdb -load ~/.Xresources
-	echo 'Give a hot reload then, 
-		have fun with new Theme'
+	echo -e 'Give a hot reload then,\n Have fun with new Theme'
 else
 	xwallpaper --zoom $(cat ~/.cache/wal/wal)
 	echo 'Keep enjoying with old one..!'
