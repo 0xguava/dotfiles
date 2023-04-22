@@ -1,4 +1,4 @@
-set default-bg "#1d1c1c"
-set default-fg "#dbd8d3"
-set font 'JetBrains Mono'
+ set default-bg '{background}'
+ set default-fg '{foreground}'
+ set font 'JetBrains Mono'
 
