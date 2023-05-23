@@ -1,0 +1,16 @@
+ffmpeg -ss 00:03:14 -to 00:04:01  -i $(yt-dlp -g https://vid.puffyan.us/watch?v=XTveJa136k8 | tail -n1) def.mp3
+
+rm Beyblade\ Original\ \(S01\)\ -\ E0{3..7}*
+
+echo -e changesnblinding lightsnintentions | dmenu -p select to play -fn JetBrains Mono-11 -l 10
+
+sed s24/*/#000000/ colors-wal-st.h
+
+montage -mode concatenate -tile 1x in*.jpg out.jpg
+
+mpv "$(ls | fzf)" --no-video
+
+ls -la | grep 'May 17'| awk '{ print $9 }'| tail -n +2 | while read f;do rm -rf $f;done
+
+
+
