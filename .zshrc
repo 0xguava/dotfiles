@@ -11,8 +11,8 @@ RPS1='%F{$color3}$(__git_ps1 " (%s)")%F'
 
 #History confs.
 HISTFILE=~/.cache/zsh/histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 
 #autocomplete with tabs
 autoload -U compinit && compinit
