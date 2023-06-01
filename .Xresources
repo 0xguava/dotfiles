@@ -1,6 +1,9 @@
 !sxiv color conf
-Sxiv.foreground:        #a1b4ba
-Sxiv.background:        #0D1218
+Sxiv.foreground:        #e5d0da
+Sxiv.background:        #0c1116
 Sxiv.font: JetBrains Mono-10
 
+!xterm
+xterm*faceName: JetBrains Mono
+xterm*faceSize: 13
 
