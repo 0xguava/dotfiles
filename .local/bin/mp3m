@@ -1,0 +1,6 @@
+#!/bin/bash	
+
+query=$(echo $* | sed 's/ /+/g')
+
+mpv $(yt-dlp -g https://youtube.com/$(curl -s https://vid.puffyan.us/search\?\q=$query | grep -Eo 'watch\?v=.{11}' | head -n 1) | tail -n 1)
+
