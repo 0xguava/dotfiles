@@ -1,0 +1,6 @@
+#!/bin/bash
+
+query=$(echo $* | sed 's/ /+/g')
+
+firefox "1337x.to/srch?search=$query"
+
