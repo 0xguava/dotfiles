@@ -1,4 +1,5 @@
  set default-bg '{background}'
  set default-fg '{foreground}'
+ set selection-clipboard clipboard
  set font 'JetBrains Mono'
 
