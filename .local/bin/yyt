@@ -1,0 +1,5 @@
+#!/bin/bash
+
+query=$(echo $* | sed 's/ /+/g')
+
+firefox https://www.youtube.com/results?\search_query=$query
