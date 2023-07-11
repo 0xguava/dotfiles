@@ -12,5 +12,6 @@ mpv "$(ls | fzf)" --no-video
 
 ls -la | grep 'May 17'| awk '{ print $9 }'| tail -n +2 | while read f;do rm -rf $f;done
 
+xdotool key --window $(xdotool search --class mpv) p
 
 
