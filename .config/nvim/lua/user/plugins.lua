@@ -92,6 +92,9 @@ return packer.startup(function(use)
 
   -- Alpha
   use 'goolord/alpha-nvim'
+  
+  --ToggleTerm
+  use "akinsho/toggleterm.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
