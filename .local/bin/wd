@@ -1,0 +1,7 @@
+#!/bin/bash
+
+url=$(xsel -b)
+
+id=$(echo "${url##*/}")
+
+aria2c -d ~/pix/wallp https://w.wallhaven.cc/$(curl -s $url | grep -Eo ".{8}wallhaven-$id.jpg") && dunstify '🖼 Wallpaper Downloaded!' "Saved as: wallhaven-$id.jpg"
