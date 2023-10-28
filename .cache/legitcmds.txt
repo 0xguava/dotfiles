@@ -14,4 +14,14 @@ ls -la | grep 'May 17'| awk '{ print $9 }'| tail -n +2 | while read f;do rm -rf 
 
 xdotool key --window $(xdotool search --class mpv) p
 
+curl -s $(cat walls.txt | while read f;do echo $f;done) | grep -Eo 'https://w.wallhaven.{32}' |while read h;do aria2c $h;done
+
+mpv --no-video  https://youtube.com/$(curl -s https://vid.puffyan.us/search\?q=gravero+playlist | grep -Eo 'playlist\?list=.{34}' | head -n1)
+
+ffmpeg -i SLANDER\ -\ Love\ Is\ Gone\ \(ft.\ Dylan\ Matthew\)\ \[Official\ Music\ Video\]\ \[yctQRe--q6c\].webm -c:v libx264 -c:a aac sl.mp4
+
+echo 'lol/col/dol/jhol/deal/bill' | cut -d'/' -f2-
+
+ls -v | cat -n | while read n f;do mv $f $n.mp4;done
+
 
