@@ -14,7 +14,7 @@ window#waybar {
     color: @foreground;
     transition-property: background-color;
     transition-duration: .5s;
-    border: 1px solid @cursor;
+    border-bottom: 1px solid @color2;
 
 }
 
@@ -129,15 +129,15 @@ button:hover {
 }
 
 #clock {
-    /* background-color: ; */
-    color: @foreground;
-    /* border: 1px solid @cursor; */
+    background-color: @color6;
+    color: @background;
+    border: 0;
 }
 
 #battery {
-    /* background-color: #000000; */
-    color: @foreground;
-    /* border: 1px solid @cursor; */
+    background-color: @color10;
+    color: @background;
+    border: 0;
 }
 
 #battery.charging, #battery.plugged {
@@ -175,9 +175,10 @@ label:focus {
 }
 
 #memory {
-    /* background-color: #000000; */
-    color: @foreground;
-    /* border: 1px solid @cursor; */
+    background-color: @color5;
+    color: @background;
+    border: 0;
+    
 }
 
 #disk {
@@ -187,9 +188,9 @@ label:focus {
 }
 
 #backlight {
-    /* background-color: #000000; */
-    color: @foreground;
-    /* border: 1px solid @cursor; */
+    background-color: @color4;
+    color: @background;
+    border: 0;
 }
 
 #network {
@@ -203,14 +204,14 @@ label:focus {
 }
 
 #pulseaudio {
-    /* background-color: #000000; */
-    color: @foreground;
-    /* border: 1px solid @cursor; */
+    background-color: @color2;
+    color: @background;
+    border: 0;
 }
 
 #pulseaudio.muted {
     /* background-color: #000000; */
-    color: @foreground;
+    color: @background;
     /* border: 1px solid @cursor; */
 }
 
@@ -322,7 +323,8 @@ label:focus {
 }
 
 #custom-nettraf {
-    color: @foreground;
-    /* border-left: 1px solid @cursor; */
+    background-color: @color1;
+    color: @background;
+    border: 0;
     padding: 0 10px;
 }
