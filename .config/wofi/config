@@ -1,0 +1,6 @@
+mode=drun,run
+prompt=Enter....
+hide_scroll=true
+run-always_parse_args=true
+height=40%
+width=35%
