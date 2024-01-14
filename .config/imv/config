@@ -5,6 +5,8 @@
 # Suppress built-in key bindings, and specify them explicitly in this
 # config file.
 suppress_default_binds = true
+overlay_font = 'Iosevka:13'
+overlay_position_bottom = true
 
 [aliases]
 # Define aliases here. Any arguments passed to an alias are appended to the
@@ -14,7 +16,8 @@ suppress_default_binds = true
 [binds]
 # Define some key bindings
 q = quit
-y = exec wl-copy $imv_current_file && echo 'Copied successfully!' 
+y = exec wl-copy $imv_current_file && dunstify 'Path copied successfully!' 
+<Ctrl+x> = exec mv $imv_current_file ~/pix/.trash/ && dunstify "removed $(echo $imv_current_file | cut -d\/ -f5-7)" 
 
 # Image navigation
 <Left> = prev
