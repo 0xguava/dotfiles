@@ -286,7 +286,7 @@ label:focus {
 }
 
 #mpd.stopped {
-    background-color: #FF0000;
+    background-color: #DE3163;
     color: @background;
     border: 0;
 }
