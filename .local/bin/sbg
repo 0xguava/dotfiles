@@ -1,0 +1,4 @@
+#!/bin/bash
+
+wal -s -i $(wl-paste) > /dev/null && swww img $(wl-paste) --transition-type wipe --transition-angle 30 && pywalfox update && dunstify "Theme changed." "Successfully!"
+
