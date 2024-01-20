@@ -1,0 +1,9 @@
+#!/bin/bash
+
+playpause=$(mpc | awk '/\[.*]/{split($0, a, " "); print a[1]}')
+
+if [[ "$playpause" = "[playing]" ]]; then
+	dunstify -i /usr/share/icons/default/playing.png "Playing.." "$(mpc current)"
+elif [[ "$playpause" = "[paused]" ]]; then 
+  dunstify -i /usr/share/icons/default/paused.png "Paused!" "$(mpc current)"	
+fi
