@@ -2,10 +2,18 @@
 
 playpause=$(mpc | awk '/\[.*]/{split($0, a, " "); print a[1]}' | tail -n1)
 
-if [[ "$playpause" = "[playing]" ]]; then
-	dunstify -r 10 -i /usr/share/icons/default/playing.png "Playing.." "$(mpc current)"
-elif [[ "$playpause" = "[paused]" ]]; then 
-  dunstify -r 10 -i /usr/share/icons/default/paused.png "Paused!" "$(mpc current)"	
-fi
+case $playpause in 
+  \[playing\])
+    dunstify -r 10 -i /usr/share/icons/default/playing.png "Playing.." "$(mpc current)"
+    ;;
+  \[paused\])
+    dunstify -r 10 -i /usr/share/icons/default/paused.png "Paused!" "$(mpc current)"	
+    ;;
+  "")
+    dunstify -r 10 -i /usr/share/icons/default/stop.png "Stopped!"
+    ;;
+esac
 
-echo $DUNST_ICON_PATH
+
+
+

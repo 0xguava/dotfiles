@@ -1,6 +1,13 @@
 #!/bin/bash
 
-url=$(xsel -b)
+case $XDG_SESSION_TYPE in 
+  tty)
+    url=$(xsel -b)
+    ;;
+  wayland)
+    url=$(wl-paste)
+    ;;
+esac
 
 id=$(echo $url | cut -d/ -f5)
 
