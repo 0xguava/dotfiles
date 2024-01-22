@@ -1,0 +1,19 @@
+#!/bin/bash
+
+playpause=$(mpc | awk '/\[.*]/{split($0, a, " "); print a[1]}' | tail -n1)
+
+case $playpause in 
+  \[playing\])
+    dunstify -r 10 -i /usr/share/icons/default/playing.png "Playing.." "$(mpc current)"
+    ;;
+  \[paused\])
+    dunstify -r 10 -i /usr/share/icons/default/paused.png "Paused!" "$(mpc current)"	
+    ;;
+  "")
+    dunstify -r 10 -i /usr/share/icons/default/stop.png "Stopped!"
+    ;;
+esac
+
+
+
+
