@@ -1,10 +1,10 @@
 #!/bin/bash
 
-bright=$(xbacklight -get)
+# bright=$(xbacklight -get)
 icon='🔥'
-echo $icon$(printf "%.f\n" $bright)'%'
+# echo $icon$(printf "%.f\n" $bright)'%'
 
-
+echo $icon$(($(brightnessctl g)/75))%
 
 
 
