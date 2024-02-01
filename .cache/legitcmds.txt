@@ -20,8 +20,13 @@ mpv --no-video  https://youtube.com/$(curl -s https://vid.puffyan.us/search\?q=g
 
 ffmpeg -i SLANDER\ -\ Love\ Is\ Gone\ \(ft.\ Dylan\ Matthew\)\ \[Official\ Music\ Video\]\ \[yctQRe--q6c\].webm -c:v libx264 -c:a aac sl.mp4
 
+ffmpeg -i videoplayback.webm -vn -ab 128k -ar 44100 -y ll.mp3
+
 echo 'lol/col/dol/jhol/deal/bill' | cut -d'/' -f2-
 
 ls -v | cat -n | while read n f;do mv $f $n.mp4;done
+
+git config --local core.sshCommand 'ssh -i ~/.ssh/id_ed25519'
+
 
 
