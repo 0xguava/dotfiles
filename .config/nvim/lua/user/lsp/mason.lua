@@ -4,6 +4,8 @@ local servers = {
 	"pyright",
 	"jsonls",
   "clangd",
+  "html",
+  "cssls",
 }
 
 local settings = {
