@@ -28,5 +28,12 @@ ls -v | cat -n | while read n f;do mv $f $n.mp4;done
 
 git config --local core.sshCommand 'ssh -i ~/.ssh/id_ed25519'
 
+cat list.txt| while read f;do yt-dlp -x --audio-format mp3 --audio-quality 0 $f;done
+
+ffmpeg -ss 00:00:00 -to 00:00:13 -i la/WhatsApp\ Video\ 2024-04-21\ at\ 1.29.45\ AM.mp4 -filter:v "setpts=0.25*PTS" -y la/1.gif
+
+yt-dlp -f bestaudio+bestvideo --merge-output-format mp4 'https://www.youtube.com/watch?v=rQNPtLhN0s8&pp=ygULbW9ja2luZ2JpcmQ%3D'
+
+
 
 
