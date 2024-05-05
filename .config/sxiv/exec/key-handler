@@ -3,6 +3,8 @@
 while read file
 do
 	case "$1" in
+    # "C-r")
+    #   convert
 		"C-d")
 			mv "$file" ~/pix/.trash ;;
 		"C-c")
