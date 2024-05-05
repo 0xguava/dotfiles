@@ -4,5 +4,6 @@ query=$(echo $* | sed 's/ /+/g')
 id=$(curl -s https://vid.puffyan.us/search\?\q=$query | grep -Eo 'watch\?v=.{11}' | head -n 1)  
 title=$(curl -s https://www.youtube.com/$id | tr ',' '\n' | grep "\"title\":" | head -n1 | cut -d \: -f2 | tr \" ' ')
 echo Playing... $title
+echo Link: "https://youtu.be/$id"
 mpv $(yt-dlp -g https://youtube.com/$id | tail -n 1)
 
