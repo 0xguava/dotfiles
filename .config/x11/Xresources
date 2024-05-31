@@ -1,6 +1,6 @@
 !sxiv color conf
-Sxiv.foreground:        #e5d0da
-Sxiv.background:        #0c1116
+Sxiv.foreground:        #edefd2
+Sxiv.background:        #0f0e0a
 Sxiv.font: JetBrains Mono-10
 
 !xterm
