@@ -11,5 +11,5 @@ export PATH=$PATH:~/.local/bin/
 export EDITOR=nvim
 export SVDIR=$HOME/service/
 
-#MPD daemon start 
+#MPD daemon start on tty login
 [ ! -s ~/.config/mpd/pid ] && mpd
