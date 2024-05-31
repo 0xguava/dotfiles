@@ -25,15 +25,15 @@ then
 	sed '31s/0/256/' -i ~/.cache/wal/colors-wal-st.h
 	sed '24s/"[^"]*"/"#000000"/' -i ~/.cache/wal/colors-wal-st.h
 
-	sed "s/.*foreground.*/$(grep foreground ~/.cache/wal/colors.Xresources | head -n 1 | sed s/\*/Sxiv\./g)/" -i ~/.Xresources
-	sed "s/.*background.*/$(grep background ~/.cache/wal/colors.Xresources | head -n 1 | sed s/\*/Sxiv\./g)/" -i ~/.Xresources
+	sed "s/.*foreground.*/$(grep foreground ~/.cache/wal/colors.Xresources | head -n 1 | sed s/\*/Sxiv\./g)/" -i $XDG_CONFIG_HOME/x11/Xresources
+	sed "s/.*background.*/$(grep background ~/.cache/wal/colors.Xresources | head -n 1 | sed s/\*/Sxiv\./g)/" -i $XDG_CONFIG_HOME/x11/Xresources 
 
 	echo 'Getting SucklessS ready with pywal....'
 	cd ~/.local/src/dwm && sudo make clean install > /dev/null
 	cd ~/.local/src/st && sudo make clean install > /dev/null
 	cd ~/.local/src/dmenu && sudo make clean install > /dev/null
 
-	xrdb -load ~/.Xresources
+	xrdb -load $XDG_CONFIG_HOME/x11/Xresources 
 	echo -e 'Give a hot reload then,\n Have fun with new Theme'
 else
 	xwallpaper --zoom $(cat ~/.cache/wal/wal)
