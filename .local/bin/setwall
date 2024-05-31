@@ -21,9 +21,9 @@ then
 	pywalfox update > /dev/null
 
 	echo 'doing some configs....'
-	sed '/urg/d' -i ~/.cache/wal/colors-wal-dwm.h
-	sed '31s/0/256/' -i ~/.cache/wal/colors-wal-st.h
-	sed '24s/"[^"]*"/"#000000"/' -i ~/.cache/wal/colors-wal-st.h
+	sed '/urg/d' -i $XDG_CACHE_HOME/wal/colors-wal-dwm.h
+	sed '31s/0/256/' -i $XDG_CACHE_HOME/wal/colors-wal-st.h
+	sed '24s/"[^"]*"/"#000000"/' -i $XDG_CACHE_HOME/wal/colors-wal-st.h
 
 	sed "s/.*foreground.*/$(grep foreground ~/.cache/wal/colors.Xresources | head -n 1 | sed s/\*/Sxiv\./g)/" -i $XDG_CONFIG_HOME/x11/Xresources
 	sed "s/.*background.*/$(grep background ~/.cache/wal/colors.Xresources | head -n 1 | sed s/\*/Sxiv\./g)/" -i $XDG_CONFIG_HOME/x11/Xresources 
@@ -34,6 +34,7 @@ then
 	cd ~/.local/src/dmenu && sudo make clean install > /dev/null
 
 	xrdb -load $XDG_CONFIG_HOME/x11/Xresources 
+  sed '27,$d' -i $XDG_CACHE_HOME/wal/colors.sh
 	echo -e 'Give a hot reload then,\n Have fun with new Theme'
 else
 	xwallpaper --zoom $(cat ~/.cache/wal/wal)
