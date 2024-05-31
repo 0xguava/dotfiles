@@ -1,6 +1,6 @@
 #!/bin/bash
 
-url=$(xsel -b)
+url=$(xclip -o -sel c)
 # case $XDG_SESSION_TYPE in 
 #   tty)
 #     ;;
