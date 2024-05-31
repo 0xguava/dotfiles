@@ -31,6 +31,7 @@ function precmd () {
 
 export PATH=$PATH:~/.local/bin/
 export EDITOR=nvim
+export SVDIR=$HOME/service/
 
 #aliases
 [ -f "$HOME/.config/zsh/aliasrc" ] && source "$HOME/.config/zsh/aliasrc"
