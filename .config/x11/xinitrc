@@ -1,0 +1,18 @@
+#!/bin/sh
+
+#My config starts
+picom -f &
+xwallpaper --zoom $(cat ~/.cache/wal/wal) &
+dwmblocks &
+pipewire &
+xrdb $XRESOURCES &
+
+while true; do
+	dwm >/dev/null 2>&1
+done
+
+dbus-run-session /usr/bin/local/dwm
+
+
+
+
