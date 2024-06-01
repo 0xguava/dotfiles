@@ -5,5 +5,5 @@ pacman -S base-devel git libx11 libxft firefox sxiv xclip xsel xf86-input-synapt
   htop dunst aria2 mpd ncmpcpp tmux noto-fonts-emoji picom python python-pip python-pywal \
   python-setuptools qbittorrent telegram-desktop ttf-jetbrains-mono ttf-nerd-fonts-symbols-common \
   ttf-nerd-fonts-symbols-mono ueberzug usbutils virtualbox virtualbox-guest-utils wget yt-dlp\
-  zathura zathura-pdf-mupdf xorg-xrandr
+  zathura zathura-pdf-mupdf xorg-xrandr unzip
 #yay -S python-pywalfox sioyek-git wal-telegram-git cava 
