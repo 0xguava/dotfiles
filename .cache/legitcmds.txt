@@ -34,6 +34,9 @@ ffmpeg -ss 00:00:00 -to 00:00:13 -i la/WhatsApp\ Video\ 2024-04-21\ at\ 1.29.45\
 
 yt-dlp -f bestaudio+bestvideo --merge-output-format mp4 'https://www.youtube.com/watch?v=rQNPtLhN0s8&pp=ygULbW9ja2luZ2JpcmQ%3D'
 
+url pkmn.li 2> /dev/null | sed '1,3d'
+
+
 
 
 
