@@ -29,9 +29,9 @@ then
 	sed "s/.*background.*/$(grep background $XDG_CACHE_HOME/wal/colors.Xresources | head -n 1 | sed s/\*/Sxiv\./g)/" -i $XRESOURCES 
 
 	echo 'Getting SucklessS ready with pywal....'
-	cd ~/.local/src/dwm && sudo make clean install > /dev/null
-	cd ~/.local/src/st && sudo make clean install > /dev/null
-	cd ~/.local/src/dmenu && sudo make clean install > /dev/null
+	cd $SSRC/dwm && sudo make clean install > /dev/null
+	cd $SSRC/st && sudo make clean install > /dev/null
+	cd $SSRC/dmenu && sudo make clean install > /dev/null
 
 	xrdb $XRESOURCES 
   sed '27,$d' -i $XDG_CACHE_HOME/wal/colors.sh
