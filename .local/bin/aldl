@@ -6,10 +6,8 @@ buf=$(xclip -o -sel c 2> /dev/null)
 nm=$(xclip -o -sel c 2> /dev/null | cut -d \/ -f3)
 
   sleep 1 &&
-  if [[ -z $buf ]]
+  if [[ -n $buf ]]
   then
-    continue
-  else
     case $nm in 
       'wallhaven.cc')
         dunstify "Wallpaper download queued !" && /home/adi/.local/bin/wd && xclip -sel c /dev/null ;;
