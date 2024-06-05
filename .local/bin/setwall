@@ -1,20 +1,23 @@
 #!/bin/bash
 
-if [ "$#" -eq 0 ]
+if [[ -n $(xclip -o -sel c) ]]
 	then
-		wpic=$(ls ~/pix/wallp | shuf -n1)
-	else
+    wpic=$(xclip -o -sel c)
+  elif [[ "$#" -eq 0 ]]
+  then
+		wpic=$(ls $HOME/pix/wallp/* | shuf -n1)
+  else
 		wpic=$1
 fi
 
-xwallpaper --zoom ~/pix/wallp/$wpic
+xwallpaper --zoom $wpic
 
 read -p 'Did you liked it? Wanna continue... (y) - ' perm
 
 if [[ $perm == "y" ]]
 then
 	echo 'Generating pywal color scheme!....'
-	wal -s -i ~/pix/wallp/$wpic > /dev/null
+	wal -s -i $wpic > /dev/null
 	echo 'Getting Pywal theme for Telegram...'
 	wal-telegram -w -g > /dev/null
 	# echo 'Getting Pywal colors for Firefox with pywalfox....'
@@ -35,8 +38,9 @@ then
 
 	xrdb $XRESOURCES 
   sed '27,$d' -i $XDG_CACHE_HOME/wal/colors.sh
+  xclip -sel c < /dev/null
 	echo -e 'Give a hot reload then,\n Have fun with new Theme'
 else
-	xwallpaper --zoom $(cat ~/.cache/wal/wal)
+	xwallpaper --zoom $(cat $XDG_CACHE_HOME/wal/wal)
 	echo 'Keep enjoying with old one..!'
 fi
