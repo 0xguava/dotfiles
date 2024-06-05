@@ -29,10 +29,6 @@ function precmd () {
     print -Pn -- '\e]2;%n@%m %~\a'
 }
 
-export PATH=$PATH:~/.local/bin/
-export EDITOR=nvim
-export SVDIR=$HOME/service/
-
 #aliases
 [ -f "$HOME/.config/zsh/aliasrc" ] && source "$HOME/.config/zsh/aliasrc"
 
