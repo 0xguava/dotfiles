@@ -1,0 +1,8 @@
+#!/bin/sh
+
+key=
+
+curl -s -X POST "https://s-ul.eu/api/v1/upload?key=$key&wizard=true" -F "file=@$1" | jq -r .url | xclip -sel c
+
+echo url: $(xclip -o -sel c)
+echo delete-url: https://s-ul.eu/delete.php?key=$key&file=$(xclip -o -sel c | cut -d \/ -f4)
