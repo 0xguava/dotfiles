@@ -1,9 +1,5 @@
 #!/bin/bash	
 
-query=$(echo $* | sed 's/ /+/g')
-id=$(curl -s https://vid.puffyan.us/search\?\q=$query | grep -Eo 'watch\?v=.{11}' | head -n 1)  
-title=$(curl -s https://www.youtube.com/$id | tr ',' '\n' | grep "\"title\":" | head -n1 | cut -d \: -f2 | tr \" ' ')
-echo Playing... $title
-echo Link: "https://youtu.be/$id"
-mpv $(yt-dlp -g https://youtube.com/$id | tail -n 1)
-
+url=https://youtu.be/$(curl -s https://vid.puffyan.us/search\?\q=$(echo $* | sed 's/ /+/g') | grep -Eo 'watch\?v=.{11}' | head -n 1) 
+echo Link: $url 
+mpv $(yt-dlp -g $url | tail -n 1)
