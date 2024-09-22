@@ -36,7 +36,12 @@ yt-dlp -f bestaudio+bestvideo --merge-output-format mp4 'https://www.youtube.com
 
 url pkmn.li 2> /dev/null | sed '1,3d'
 
+xbps-query -m | sed 's/-[0-9].*//g' > xbps-pkg.txt
 
-
+ffmpeg -i input.mp3 -filter_complex \
+"[0]atrim=start=0:end=60,asetpts=PTS-STARTPTS[a]; \
+ [0]atrim=start=120:end=180,asetpts=PTS-STARTPTS[b]; \
+ [a][b]concat=n=2:v=0:a=1[out]" \
+-map "[out]" output.mp3
 
 
