@@ -44,4 +44,5 @@ ffmpeg -i input.mp3 -filter_complex \
  [a][b]concat=n=2:v=0:a=1[out]" \
 -map "[out]" output.mp3
 
+sed '2q;d' file.txt
 
