@@ -46,3 +46,13 @@ ffmpeg -i input.mp3 -filter_complex \
 
 sed '2q;d' file.txt
 
+grep -Rnw '/path/to/somewhere/' -e 'pattern'
+
+
+
+
+
+
+
+
+
