@@ -48,6 +48,10 @@ sed '2q;d' file.txt
 
 grep -Rnw '/path/to/somewhere/' -e 'pattern'
 
+apparmor_status | grep -E 'profiles.*(loaded|enforce)'
+
+wget --no-parent -r 'http://192.168.222.150:8000/'
+
 
 
 
