@@ -2,7 +2,7 @@
 
 case $XDG_SESSION_TYPE in 
   tty)
-    url=$(xsel -b)
+    url=$(xclip -sel c -o)
     ;;
   wayland)
     url=$(wl-paste)
