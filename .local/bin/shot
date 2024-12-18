@@ -1,7 +1,7 @@
 #!/bin/bash
 
 demu(){
-  ch=$(echo -e "select mode\nfullscreen" | dmenu)
+  ch=$(echo -e "fullscreen\nselect mode" | dmenu)
 
   sleep 0.3
 
