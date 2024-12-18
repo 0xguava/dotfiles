@@ -1,6 +1,6 @@
 #!/bin/bash
 
-demu() {
+demu(){
   ch=$(echo -e "select mode\nfullscreen" | dmenu)
 
   sleep 0.3
@@ -20,4 +20,12 @@ demu() {
 
 while getopts 'p' opt; do 
   case ${opt} in 
+    p)
+      maim -s $HOME/pix/ss/$(date +%y-%m-%d_%H%M%S).jpg && dunstify '🖼 Screenshot Captured!' "Saved as: $(date +%y-%m-%d_%H%M%S).jpg"
+      ;;
+    *)
+      demu
+      ;;
+  esac
+done
 
