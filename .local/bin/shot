@@ -2,7 +2,7 @@
 
 ch=$(echo -e "select mode\nfullscreen" | dmenu)
 
-sleep 0.6
+sleep 0.3
 
 case "$ch" in 
   'select mode')
@@ -10,5 +10,8 @@ case "$ch" in
     ;;
   'fullscreen')
     maim $HOME/pix/ss/$(date +%y-%m-%d_%H%M%S)_full.jpg && dunstify '🖼 Screenshot Captured!' "Saved as: $(date +%y-%m-%d_%H%M%S)_full.jpg"   
+    ;;
+  *)
+    dunstify "Good Bye!" "Come back again"
     ;;
 esac
