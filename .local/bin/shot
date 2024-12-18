@@ -1,17 +1,23 @@
 #!/bin/bash
 
-ch=$(echo -e "select mode\nfullscreen" | dmenu)
+demu() {
+  ch=$(echo -e "select mode\nfullscreen" | dmenu)
 
-sleep 0.3
+  sleep 0.3
 
-case "$ch" in 
+  case "$ch" in
   'select mode')
     maim -s $HOME/pix/ss/$(date +%y-%m-%d_%H%M%S).jpg && dunstify '🖼 Screenshot Captured!' "Saved as: $(date +%y-%m-%d_%H%M%S).jpg"
     ;;
   'fullscreen')
-    maim $HOME/pix/ss/$(date +%y-%m-%d_%H%M%S)_full.jpg && dunstify '🖼 Screenshot Captured!' "Saved as: $(date +%y-%m-%d_%H%M%S)_full.jpg"   
+    maim $HOME/pix/ss/$(date +%y-%m-%d_%H%M%S)_full.jpg && dunstify '🖼 Screenshot Captured!' "Saved as: $(date +%y-%m-%d_%H%M%S)_full.jpg"
     ;;
   *)
     dunstify "Good Bye!" "Come back again"
     ;;
-esac
+  esac
+}
+
+while getopts 'p' opt; do 
+  case ${opt} in 
+
