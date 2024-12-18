@@ -24,9 +24,6 @@ while getopts 'p' opt; do
       sleep 0.3
       maim -s $HOME/pix/ss/$(date +%y-%m-%d_%H%M%S).jpg && dunstify '🖼 Screenshot Captured!' "Saved as: $(date +%y-%m-%d_%H%M%S).jpg"
       ;;
-    # *)
-    #   demu
-    #   ;;
   esac
 done
 
