@@ -52,6 +52,22 @@ apparmor_status | grep -E 'profiles.*(loaded|enforce)'
 
 wget --no-parent -r 'http://192.168.222.150:8000/'
 
+while getopts "au:" opt;do 
+  case "${opt}" in 
+    a)
+      echo "opt -a"
+      ;;
+    u)
+      echo "opt -u ${OPTARG}"
+      ;;
+  esac
+done
+
+
+
+
+
+
 
 
 
