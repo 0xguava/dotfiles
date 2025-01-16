@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ -n $(xclip -o -sel c) ]]
+if [[ -n $(xclip -o -sel c | grep -E '.(png|jpg|jpeg)') ]] 
 	then
     wpic=$(xclip -o -sel c)
   elif [[ "$#" -eq 0 ]]
