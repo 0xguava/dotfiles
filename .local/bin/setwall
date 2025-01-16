@@ -39,7 +39,8 @@ then
 	xrdb $XRESOURCES 
   sed '27,$d' -i $XDG_CACHE_HOME/wal/colors.sh
   xclip -sel c < /dev/null
-	echo -e 'Give a hot reload then,\n Have fun with new Theme'
+  pkill dwm
+	echo -e 'Have fun with new Theme'
 else
 	xwallpaper --zoom $(cat $XDG_CACHE_HOME/wal/wal)
 	echo 'Keep enjoying with old one..!'
