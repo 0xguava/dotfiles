@@ -21,6 +21,6 @@ st.cursorColor: {foreground}
 
 !dmenu
 dmenu.normfgcolor: {foreground}
-demnu.normbgcolor: {background}
+dmenu.normbgcolor: {background}
 dmenu.selfgcolor: {foreground}
 dmenu.selbgcolor: {color1}
