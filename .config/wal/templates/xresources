@@ -17,6 +17,7 @@ dwm.selbordercolor: {foreground}
 
 !st
 st.background: #000000 
+st.foreground: {foreground}
 st.cursorColor: {foreground}
 st.color0: {color0}
 st.color1: {color1}
