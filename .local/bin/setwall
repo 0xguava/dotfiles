@@ -1,48 +1,33 @@
 #!/bin/bash
 
-if [[ -n $(xclip -o -sel c | grep -E '.(png|jpg|jpeg)') ]] 
-	then
-    wpic=$(xclip -o -sel c)
-  elif [[ "$#" -eq 0 ]]
-  then
-		wpic=$(ls $HOME/pix/wallp/* | shuf -n1)
-  else
-		wpic=$1
-fi
-
-xwallpaper --zoom $wpic
-
-read -p 'Did you liked it? Wanna continue... (y) - ' perm
-
-if [[ $perm == "y" ]]
-then
-	echo 'Generating pywal color scheme!....'
-	wal -s -i $wpic > /dev/null
-	echo 'Getting Pywal theme for Telegram...'
-	wal-telegram -w -g > /dev/null
-	# echo 'Getting Pywal colors for Firefox with pywalfox....'
-	# pywalfox update > /dev/null
-
-	# echo 'doing some configs....'
-	# sed '/urg/d' -i $XDG_CACHE_HOME/wal/colors-wal-dwm.h
-	# sed '31s/0/256/' -i $XDG_CACHE_HOME/wal/colors-wal-st.h
-	# sed '24s/"[^"]*"/"##000000"/' -i $XDG_CACHE_HOME/wal/colors-wal-st.h
-
-	# sed "s/.*foreground.*/$(grep foreground $XDG_CACHE_HOME/wal/colors.Xresources | head -n 1 | sed s/\*/Sxiv\./g)/" -i $XRESOURCES
-	# sed "s/.*background.*/$(grep background $XDG_CACHE_HOME/wal/colors.Xresources | head -n 1 | sed s/\*/Sxiv\./g)/" -i $XRESOURCES 
-
-	# echo 'Getting SucklessS ready with pywal....'
-	# cd $SSRC/dwm && sudo make clean install > /dev/null
-	# cd $SSRC/st && sudo make clean install > /dev/null
-	# cd $SSRC/dmenu && sudo make clean install > /dev/null
-
-	xrdb $XRESOURCES 
-  xrdb  -merge $XDG_CACHE_HOME/wal/colors.Xresources
-  # sed '27,$d' -i $XDG_CACHE_HOME/wal/colors.sh
-  xclip -sel c < /dev/null
+if [[ -n $(xclip -o -sel c | grep -E '.(png|jpg|jpeg)') ]]; then
+  wpic=$(xclip -o -sel c)
+  xwallpaper --zoom $wpic
+  wal -s -i $wpic >/dev/null
+  xrdb $XRESOURCES
   pkill dwm
-	echo -e 'Have fun with new Theme'
+elif [[ "$#" -eq 0 ]]; then
+  wpic=$(ls $HOME/pix/wallp/* | shuf -n1)
+  xwallpaper --zoom $wpic
+  read -p 'Did you liked it? Wanna continue... (y) - ' perm
+  if [[ $perm == "y" ]]; then
+    # echo 'Generating pywal color scheme!....'
+    wal -s -i $wpic >/dev/null
+
+    # echo 'Getting Pywal theme for Telegram...'
+    # wal-telegram -w -g > /dev/null
+
+    xrdb $XRESOURCES
+    pkill dwm
+    # echo -e 'Have fun with new Theme'
+  else
+    xwallpaper --zoom $(cat $XDG_CACHE_HOME/wal/wal)
+    echo 'Keep enjoying with old one..!'
+  fi
 else
-	xwallpaper --zoom $(cat $XDG_CACHE_HOME/wal/wal)
-	echo 'Keep enjoying with old one..!'
+  wpic=$1
+  xwallpaper --zoom $wpic
+  wal -s -i $wpic >/dev/null
+  xrdb $XRESOURCES
+  pkill dwm
 fi
