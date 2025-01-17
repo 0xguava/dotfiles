@@ -18,3 +18,9 @@ dwm.selbordercolor: {foreground}
 !st
 st.background: #000000 
 st.cursorColor: {foreground}
+
+!dmenu
+dmenu.normfgcolor: {foreground}
+demnu.normbgcolor: {background}
+dmenu.selfgcolor: {foreground}
+dmenu.selbgcolor: {color1}
