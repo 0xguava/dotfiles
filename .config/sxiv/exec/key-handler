@@ -9,5 +9,7 @@ do
 			mv "$file" ~/pix/.trash ;;
 		"C-c")
 			echo "$file" | xclip -sel c ;;
+    "s")
+      setwall "$file" ;;
 	esac
 done
