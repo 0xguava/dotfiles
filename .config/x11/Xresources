@@ -1,9 +1,1 @@
-!sxiv color conf
-Sxiv.foreground:        #edefd2
-Sxiv.background:        #0f0e0a
-Sxiv.font: JetBrains Mono-10
-
-!xterm
-xterm*faceName: JetBrains Mono
-xterm*faceSize: 13
-
+/home/adi/.cache/wal/xresources
