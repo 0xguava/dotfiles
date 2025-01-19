@@ -6,6 +6,7 @@ if [[ -n $(xclip -o -sel c | grep -E '.(png|jpg|jpeg)') ]]; then
   wal -s -i $wpic >/dev/null
   xrdb $XRESOURCES
   pkill dwm
+  dwmblocks &
 elif [[ "$#" -eq 0 ]]; then
   wpic=$(ls $HOME/pix/wallp/* | shuf -n1)
   xwallpaper --zoom $wpic
@@ -19,6 +20,7 @@ elif [[ "$#" -eq 0 ]]; then
 
     xrdb $XRESOURCES
     pkill dwm
+    dwmblocks &
     # echo -e 'Have fun with new Theme'
   else
     xwallpaper --zoom $(cat $XDG_CACHE_HOME/wal/wal)
@@ -30,4 +32,5 @@ else
   wal -s -i $wpic >/dev/null
   xrdb $XRESOURCES
   pkill dwm
+  dwmblocks &
 fi
