@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo 🚀$(uptime | awk '{ print $3 }' | sed 's/,/m/g')
