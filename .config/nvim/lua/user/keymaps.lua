@@ -77,3 +77,6 @@ keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
 -- ToggleTerm
 keymap("n", "<leader>t", ":ToggleTerm<cr>",  opts)
+
+-- BufferLine
+keymap("n", "<leader>x", ":BufferLinePickClose<cr>",  opts)
