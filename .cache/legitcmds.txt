@@ -63,7 +63,7 @@ while getopts "au:" opt;do
   esac
 done
 
-
+echo ${0##*/}
 
 
 
