@@ -80,3 +80,14 @@ keymap("n", "<leader>t", ":ToggleTerm<cr>",  opts)
 
 -- BufferLine
 keymap("n", "<leader>x", ":BufferLinePickClose<cr>",  opts)
+
+-- To toggle realativenumber
+function relativeToggle()
+  if vim.o.relativenumber then -- To access its stored value. OPT, :get() is used with vim.opt
+    vim.opt.relativenumber = false
+  else
+    vim.opt.relativenumber = true
+  end
+end
+
+keymap("n", "<leader>r", "<cmd>lua relativeToggle()<cr>",  opts)
