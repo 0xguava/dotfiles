@@ -69,7 +69,9 @@ ffmpeg -i 13.dbs.mkv -r 1/1 "dbs%05d.png"
 
 ffmpeg -i fma.mp3 -filter:a "atempo=1.5" fmas.mp3
 
+find . -path ./.env -prune -o -name '*.py' -print
 
+docker exec -it [container-id] bash // to enter a running container
 
 
 
